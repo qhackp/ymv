@@ -61,7 +61,7 @@ create table voluntary_service_applicate(
 recruit_no number not null,
 member_no number not null
 constraint fk_recruit_no references recruit(recruit_no)
-constraint fk_member_no_2 references member(member_no),
+constraint fk_member_no_6 references member(member_no),
 primary key(recruit_no,member_no)
 )
 
