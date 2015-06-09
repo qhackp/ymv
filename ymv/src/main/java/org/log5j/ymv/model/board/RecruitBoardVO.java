@@ -1,7 +1,7 @@
 package org.log5j.ymv.model.board;
 //area => location
 // timeHr,date ??�� ?�시 ?�각
-public class RecruitBoardVO {
+public class RecruitBoardVO implements BoardVO{
 	private int recruitNo;
 	private String title;
 	private String field;
