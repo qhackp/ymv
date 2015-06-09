@@ -1,6 +1,6 @@
 package org.log5j.ymv.model.board;
 
-public class QnABoardVO {
+public class QnABoardVO implements BoardVO{
 	private int qnaNo;
 	private String title;
 	private String writer;
