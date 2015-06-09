@@ -9,4 +9,8 @@ public class TestController {
 	public String test(){
 		return "index";
 	}
+	@RequestMapping("testTiles.ymv")
+	public String testTiles(){
+		return "home";
+	}
 }
