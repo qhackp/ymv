@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-sest <a href="testTiles.ymv">tiles test</a>
+test <a href="testTiles.ymv">tiles test</a>
 </body>
 </html>
