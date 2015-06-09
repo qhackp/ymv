@@ -1,6 +1,6 @@
-package org.log5j.ymv.model;
+package org.log5j.ymv.model.board;
 //area => location
-// timeHr,date 타입 다시 생각
+// timeHr,date ??�� ?�시 ?�각
 public class RecruitBoardVO {
 	private int recruitNo;
 	private String title;

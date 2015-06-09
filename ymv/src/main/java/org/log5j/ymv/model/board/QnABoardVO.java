@@ -1,4 +1,4 @@
-package org.log5j.ymv.model;
+package org.log5j.ymv.model.board;
 
 public class QnABoardVO {
 	private int qnaNo;

@@ -1,14 +1,14 @@
-package org.log5j.ymv.model;
+package org.log5j.ymv.model.voluntary;
 
-public class VoluntaryApplicantOkVO {
+public class VoluntaryApplicantVO {
 
 	private int recruitNo;
 	private int memberNo;
-	public VoluntaryApplicantOkVO() {
+	public VoluntaryApplicantVO() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public VoluntaryApplicantOkVO(int recruitNo, int memberNo) {
+	public VoluntaryApplicantVO(int recruitNo, int memberNo) {
 		super();
 		this.recruitNo = recruitNo;
 		this.memberNo = memberNo;
@@ -27,7 +27,7 @@ public class VoluntaryApplicantOkVO {
 	}
 	@Override
 	public String toString() {
-		return "VoluntaryApplicantOk [recruitNo=" + recruitNo + ", memberNo="
+		return "VoluntaryApplicantVO [recruitNo=" + recruitNo + ", memberNo="
 				+ memberNo + "]";
 	}
 	

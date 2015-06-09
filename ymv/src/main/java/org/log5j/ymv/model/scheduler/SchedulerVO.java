@@ -1,4 +1,4 @@
-package org.log5j.ymv.model;
+package org.log5j.ymv.model.scheduler;
 
 public class SchedulerVO {
 	private int memberNo;

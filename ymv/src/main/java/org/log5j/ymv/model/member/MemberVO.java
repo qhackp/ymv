@@ -1,4 +1,4 @@
-package org.log5j.ymv.model;
+package org.log5j.ymv.model.member;
 
 public class MemberVO {
 	private int memberNo;
