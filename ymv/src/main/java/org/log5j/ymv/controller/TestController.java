@@ -11,7 +11,6 @@ public class TestController {
 	}
 	@RequestMapping("testTiles.ymv")
 	public String testTiles(){
-		String test;
 		return "home";
 	}
 	
