@@ -9,6 +9,7 @@ create table member(
 	mail_address varchar2(50) not null,
 	member_type varchar2(10) not null
 )
+
 drop table member
 -- board
 drop table board
@@ -31,7 +32,7 @@ create table statistics(
 	primary key(age,field)
 )
 select * from STATISTICS
-drop table recruit
+drop table statistics
 
 --recruit
 create table recruit(
@@ -41,13 +42,13 @@ create table recruit(
 	location varchar2(100) not null,
 	age varchar2(100) not null,
 	start_date date not null,
-	end_date date not null,
-	content clob not null
+	end_date date not null
 	)
 	
 drop table recruit
 
 drop table scheduler
+
 create table scheduler(
 member_no number primary key constraint fk_member_no_5 references member(member_no),
 field varchar(50) not null,
@@ -57,6 +58,7 @@ end_date date not null
 )
 
 drop table QnA_board
+
 create table voluntary_service_applicate(
 recruit_no number not null,
 member_no number not null
@@ -64,7 +66,9 @@ constraint fk_recruit_no references recruit(recruit_no)
 constraint fk_member_no_6 references member(member_no),
 primary key(recruit_no,member_no)
 )
+
 select * from QnA_board;
+
 create table QnA_board(
 qna_no number primary key,
 title varchar2(50) not null,
@@ -103,7 +107,7 @@ create table voluntary_applicant_ok(
 	primary key(recruit_no,member_no)
 )
 select * from voluntary_applicant
--- voluntary_applicant ÌôïÏù∏Ìï¥Î≥¥Í≤ÉÏùå
+-- voluntary_applicant 
 create table voluntary_applicant(
 	recruit_no number not null,
 	member_no number not null
@@ -111,4 +115,44 @@ create table voluntary_applicant(
 	constraint fk_member_no_2 references member(member_no),
 	primary key(recruit_no,member_no)
 )
+create table board(
+	board_no number primary key,
+	board_type varchar2(50) not null,
+	title varchar2(50) not null,
+	writer varchar2(50) not null,
+	content clob not null,
+	member_no number not null
+	constraint fk_member_no_4 references member(member_no)
+)
 
+create sequence ymv_seq;
+
+
+insert into member values(1,'java','1234','¿”øµ«–','∆«±≥','890716','qhackp@naver.com','normal')
+insert into member values(2,'java1','1234','πÈ¡ˆøµ','∆«±≥','960102','qorwldud@naver.com','normal')
+insert into BOARD(board_no,board_type,title,writer,content,member_no) values(ymv_seq.nextval,'review','≈◊Ω∫∆Æ','¿”øµ«–','∞°≥™¥Ÿ∂Û','1')
+insert into BOARD(board_no,board_type,title,writer,content,member_no) values(ymv_seq.nextval,'review','≈◊Ω∫∆Æ','¿”øµ«–','∞°≥™¥Ÿ∂Û','1')
+insert into statistics(age, field, applicate_count) values(20,'»Ø∞Ê',1)
+insert into statistics(age, field, applicate_count) values(30,'»Ø∞Ê',2)
+insert into RECRUIT(recruit_no, title, field, location, age, start_date, end_date) values(1,'∫¿ªÁ±€?','»Ø∞Ê','∆«±≥',20,to_date('2015-06-09 12:00','YYYY-MM-DD HH24:MI'),to_date('2015-06-09 15:00','YYYY-MM-DD HH24:MI'))
+insert into RECRUIT(recruit_no, title, field, location, age, start_date, end_date) values(2,'∫¿ªÁ±€?','»Ø∞Ê','∆«±≥',20,to_date('2015-06-09 12:00','YYYY-MM-DD HH24:MI'),to_date('2015-06-09 15:00','YYYY-MM-DD HH24:MI'))
+insert into SCHEDULER(member_no, field, location, start_date, end_date) values(1, '»Ø∞Ê', '∆«±≥', to_date('2015-06-09 12:00','YYYY-MM-DD HH24:MI'),to_date('2015-06-09 15:00','YYYY-MM-DD HH24:MI'))
+insert into SCHEDULER(member_no, field, location, start_date, end_date) values(2, '»Ø∞Ê', '∆«±≥', to_date('2015-06-09 12:00','YYYY-MM-DD HH24:MI'),to_date('2015-06-09 15:00','YYYY-MM-DD HH24:MI'))
+insert into VOLUNTARY_SERVICE_APPLICATE(recruit_no, member_no) values(1, 1)
+insert into VOLUNTARY_SERVICE_APPLICATE(recruit_no, member_no) values(2, 2)
+insert into QNA_BOARD(qna_no, title, writer, content, ref, restep, relevel, member_no) values(1, 'qna∞‘Ω√∆«?', '¿”øµ«–', '≥ªøÎæÓ¬º±∏¿˙¬º±∏', 1, 0, 1, 1)
+insert into QNA_BOARD(qna_no, title, writer, content, ref, restep, relevel, member_no) values(2, 'qna∞‘Ω√∆«?', '¿”øµ«–', '≥ªøÎæÓ¬º±∏¿˙¬º±∏', 2, 0, 1, 1)
+insert into YMV_COMMENT(comment_no, writer, content, time_posted, board_no) values()
+
+insert into PICTURE(picture_no, picture_name, board_no) values()
+
+insert into VOLUNTARY_APPLICANT_OK(recruit_no, member_no) values()
+
+insert into VOLUNTARY_APPLICANT(recruit_no, member_no) values()
+
+
+
+
+
+
+select * from board where board_no=1
