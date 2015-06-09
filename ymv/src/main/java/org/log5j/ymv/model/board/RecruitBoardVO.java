@@ -1,6 +1,6 @@
 package org.log5j.ymv.model.board;
 //area => location
-// timeHr,date ??ûÖ ?§Ïãú ?ùÍ∞Å
+// timeHr,date ??ÔøΩÔøΩ ?ÔøΩÏãú ?ÔøΩÍ∞Å
 public class RecruitBoardVO {
 	private int recruitNo;
 	private String title;
@@ -9,12 +9,15 @@ public class RecruitBoardVO {
 	private int age;
 	private String startDate;
 	private String endDate;
+	private String content;
 	public RecruitBoardVO() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
 	public RecruitBoardVO(int recruitNo, String title, String field,
-			String location, int age, String startDate, String endDate) {
+			String location, int age, String startDate, String endDate,
+			String content) {
 		super();
 		this.recruitNo = recruitNo;
 		this.title = title;
@@ -23,14 +26,17 @@ public class RecruitBoardVO {
 		this.age = age;
 		this.startDate = startDate;
 		this.endDate = endDate;
+		this.content = content;
 	}
-	@Override
-	public String toString() {
-		return "RecruitBoardVO [recruitNo=" + recruitNo + ", title=" + title
-				+ ", field=" + field + ", location=" + location + ", age="
-				+ age + ", startDate=" + startDate + ", endDate=" + endDate
-				+ "]";
+
+	public String getContent() {
+		return content;
 	}
+
+	public void setContent(String content) {
+		this.content = content;
+	}
+
 	public int getRecruitNo() {
 		return recruitNo;
 	}
@@ -72,6 +78,14 @@ public class RecruitBoardVO {
 	}
 	public void setEndDate(String endDate) {
 		this.endDate = endDate;
+	}
+
+	@Override
+	public String toString() {
+		return "RecruitBoardVO [recruitNo=" + recruitNo + ", title=" + title
+				+ ", field=" + field + ", location=" + location + ", age="
+				+ age + ", startDate=" + startDate + ", endDate=" + endDate
+				+ ", content=" + content + "]";
 	}
 	
 }
