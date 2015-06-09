@@ -2,40 +2,34 @@ package org.log5j.ymv.model;
 
 public class QnABoardVO {
 	private int qnaNo;
-	private int memberNo;
 	private String title;
 	private String writer;
 	private String content;
 	private int ref;
 	private int restep;
 	private int relevel;
+	private int memberNo;
 	public QnABoardVO() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public QnABoardVO(int qnaNo, int memberNo, String title, String writer,
-			String content, int ref, int restep, int relevel) {
+	public QnABoardVO(int qnaNo, String title, String writer, String content,
+			int ref, int restep, int relevel, int memberNo) {
 		super();
 		this.qnaNo = qnaNo;
-		this.memberNo = memberNo;
 		this.title = title;
 		this.writer = writer;
 		this.content = content;
 		this.ref = ref;
 		this.restep = restep;
 		this.relevel = relevel;
+		this.memberNo = memberNo;
 	}
 	public int getQnaNo() {
 		return qnaNo;
 	}
 	public void setQnaNo(int qnaNo) {
 		this.qnaNo = qnaNo;
-	}
-	public int getMemberNo() {
-		return memberNo;
-	}
-	public void setMemberNo(int memberNo) {
-		this.memberNo = memberNo;
 	}
 	public String getTitle() {
 		return title;
@@ -73,13 +67,18 @@ public class QnABoardVO {
 	public void setRelevel(int relevel) {
 		this.relevel = relevel;
 	}
+	public int getMemberNo() {
+		return memberNo;
+	}
+	public void setMemberNo(int memberNo) {
+		this.memberNo = memberNo;
+	}
 	@Override
 	public String toString() {
-		return "QNABoardVO [qnaNo=" + qnaNo + ", memberNo=" + memberNo
-				+ ", title=" + title + ", writer=" + writer + ", content="
-				+ content + ", ref=" + ref + ", restep=" + restep
-				+ ", relevel=" + relevel + "]";
+		return "QnABoardVO [qnaNo=" + qnaNo + ", title=" + title + ", writer="
+				+ writer + ", content=" + content + ", ref=" + ref
+				+ ", restep=" + restep + ", relevel=" + relevel + ", memberNo="
+				+ memberNo + "]";
 	}
-	
-	
+
 }

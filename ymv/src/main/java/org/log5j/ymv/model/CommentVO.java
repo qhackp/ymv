@@ -2,50 +2,28 @@ package org.log5j.ymv.model;
 
 public class CommentVO {
 	private int commentNo;
-	private String boardType;
-	private int memberNo;
-	private int boardNo;
 	private String writer;
 	private String content;
 	private String timePosted;
+	private int boardNo;
 	public CommentVO() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public CommentVO(int commentNo, String boardType, int memberNo,
-			int boardNo, String writer, String content, String timePosted) {
+	public CommentVO(int commentNo, String writer, String content,
+			String timePosted, int boardNo) {
 		super();
 		this.commentNo = commentNo;
-		this.boardType = boardType;
-		this.memberNo = memberNo;
-		this.boardNo = boardNo;
 		this.writer = writer;
 		this.content = content;
 		this.timePosted = timePosted;
+		this.boardNo = boardNo;
 	}
 	public int getCommentNo() {
 		return commentNo;
 	}
 	public void setCommentNo(int commentNo) {
 		this.commentNo = commentNo;
-	}
-	public String getBoardType() {
-		return boardType;
-	}
-	public void setBoardType(String boardType) {
-		this.boardType = boardType;
-	}
-	public int getMemberNo() {
-		return memberNo;
-	}
-	public void setMemberNo(int memberNo) {
-		this.memberNo = memberNo;
-	}
-	public int getBoardNo() {
-		return boardNo;
-	}
-	public void setBoardNo(int boardNo) {
-		this.boardNo = boardNo;
 	}
 	public String getWriter() {
 		return writer;
@@ -65,12 +43,17 @@ public class CommentVO {
 	public void setTimePosted(String timePosted) {
 		this.timePosted = timePosted;
 	}
+	public int getBoardNo() {
+		return boardNo;
+	}
+	public void setBoardNo(int boardNo) {
+		this.boardNo = boardNo;
+	}
 	@Override
 	public String toString() {
-		return "CommentVO [commentNo=" + commentNo + ", boardType=" + boardType
-				+ ", memberNo=" + memberNo + ", boardNo=" + boardNo
-				+ ", writer=" + writer + ", content=" + content
-				+ ", timePosted=" + timePosted + "]";
+		return "CommentVO [commentNo=" + commentNo + ", writer=" + writer
+				+ ", content=" + content + ", timePosted=" + timePosted
+				+ ", boardNo=" + boardNo + "]";
 	}
-	
+
 }

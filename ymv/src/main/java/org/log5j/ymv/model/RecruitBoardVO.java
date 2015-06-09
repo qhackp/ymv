@@ -6,21 +6,30 @@ public class RecruitBoardVO {
 	private String title;
 	private String field;
 	private String location;
-	private String timeHr;
-	private String date;
+	private int age;
+	private String startDate;
+	private String endDate;
 	public RecruitBoardVO() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	public RecruitBoardVO(int recruitNo, String title, String field,
-			String location, String timeHr, String date) {
+			String location, int age, String startDate, String endDate) {
 		super();
 		this.recruitNo = recruitNo;
 		this.title = title;
 		this.field = field;
 		this.location = location;
-		this.timeHr = timeHr;
-		this.date = date;
+		this.age = age;
+		this.startDate = startDate;
+		this.endDate = endDate;
+	}
+	@Override
+	public String toString() {
+		return "RecruitBoardVO [recruitNo=" + recruitNo + ", title=" + title
+				+ ", field=" + field + ", location=" + location + ", age="
+				+ age + ", startDate=" + startDate + ", endDate=" + endDate
+				+ "]";
 	}
 	public int getRecruitNo() {
 		return recruitNo;
@@ -46,24 +55,23 @@ public class RecruitBoardVO {
 	public void setLocation(String location) {
 		this.location = location;
 	}
-	public String getTimeHr() {
-		return timeHr;
+	public int getAge() {
+		return age;
 	}
-	public void setTimeHr(String timeHr) {
-		this.timeHr = timeHr;
+	public void setAge(int age) {
+		this.age = age;
 	}
-	public String getDate() {
-		return date;
+	public String getStartDate() {
+		return startDate;
 	}
-	public void setDate(String date) {
-		this.date = date;
+	public void setStartDate(String startDate) {
+		this.startDate = startDate;
 	}
-	@Override
-	public String toString() {
-		return "RecruitBoardVO [recruitNo=" + recruitNo + ", title=" + title
-				+ ", field=" + field + ", location=" + location + ", timeHr="
-				+ timeHr + ", date=" + date + "]";
+	public String getEndDate() {
+		return endDate;
 	}
-	
+	public void setEndDate(String endDate) {
+		this.endDate = endDate;
+	}
 	
 }

@@ -1,28 +1,22 @@
 package org.log5j.ymv.model;
 
 public class NoticeBoardVO {
-	private int memberNo;
 	private int boardNo;
 	private String title;
 	private String writer;
 	private String content;
+	private int memberNo;
 	public NoticeBoardVO() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public NoticeBoardVO(int memberNo, int boardNo, String title,
-			String writer, String content) {
+	public NoticeBoardVO(int boardNo, String title, String writer,
+			String content, int memberNo) {
 		super();
-		this.memberNo = memberNo;
 		this.boardNo = boardNo;
 		this.title = title;
 		this.writer = writer;
 		this.content = content;
-	}
-	public int getMemberNo() {
-		return memberNo;
-	}
-	public void setMemberNo(int memberNo) {
 		this.memberNo = memberNo;
 	}
 	public int getBoardNo() {
@@ -49,12 +43,17 @@ public class NoticeBoardVO {
 	public void setContent(String content) {
 		this.content = content;
 	}
+	public int getMemberNo() {
+		return memberNo;
+	}
+	public void setMemberNo(int memberNo) {
+		this.memberNo = memberNo;
+	}
 	@Override
 	public String toString() {
-		return "NoticeBoardVO [memberNo=" + memberNo + ", boardNo=" + boardNo
-				+ ", title=" + title + ", writer=" + writer + ", content="
-				+ content + "]";
+		return "NoticeBoardVO [boardNo=" + boardNo + ", title=" + title
+				+ ", writer=" + writer + ", content=" + content + ", memberNo="
+				+ memberNo + "]";
 	}
-	
-	
+
 }

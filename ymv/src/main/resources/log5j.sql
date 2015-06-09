@@ -14,14 +14,14 @@ drop table member
 drop table board
 create table board(
 	board_no number primary key,
-	board_type varchar2(10) not null,
+	board_type varchar2(50) not null,
 	title varchar2(50) not null,
 	writer varchar2(50) not null,
 	content clob not null,
 	member_no number not null
 	constraint fk_member_no_4 references member(member_no)
 )
-
+select * from board
 drop table board
 -- statistics
 create table statistics(
@@ -30,7 +30,7 @@ create table statistics(
 	applicate_count number not null,
 	primary key(age,field)
 )
-
+select * from STATISTICS
 drop table statistics
 
 --recruit
@@ -38,25 +38,24 @@ create table recruit(
 	recruit_no number primary key,
 	title varchar2(50) not null,
 	field varchar2(100) not null,
-	area varchar2(100) not null,
+	location varchar2(100) not null,
 	age varchar2(100) not null,
 	start_date date not null,
-	time_date date not null
+	end_date date not null
 	)
 	
 drop table recruit
 
 drop table scheduler
 create table scheduler(
+member_no number primary key constraint fk_member_no_5 references member(member_no),
 field varchar(50) not null,
 location varchar(50) not null,
 start_date date not null,
-end_date date not null,
-member_no number primary key
-constraint fk_member_no_5 references member(member_no)
+end_date date not null
 )
 
-drop table voluntary_service_applicate
+drop table QnA_board
 create table voluntary_service_applicate(
 recruit_no number not null,
 member_no number not null
@@ -64,11 +63,12 @@ constraint fk_recruit_no references recruit(recruit_no)
 constraint fk_member_no_6 references member(member_no),
 primary key(recruit_no,member_no)
 )
-
+select * from QnA_board;
 create table QnA_board(
-title varchar2(50) primary key,
+qna_no number primary key,
+title varchar2(50) not null,
 writer varchar2(50) not null,
-content varchar2(50) not null,
+content clob not null,
 ref varchar2(50) not null,
 restep varchar2(50) not null,
 relevel varchar2(50) not null,
@@ -76,16 +76,16 @@ member_no number not null
 constraint fk_member_no_3 references member(member_no)
 )
 --comment
-drop table comment1
+drop table ymv_comment
 create table ymv_comment(
 	comment_no number primary key,
 	writer varchar2(50) not null,
-	content varchar2(50) not null,
+	content varchar2(1000) not null,
 	time_posted date not null,
 	board_no number not null
 	constraint fk_board_no references board(board_no)
 )
-
+select * from ymv_comment
 --picture
 create table picture(
 	picture_no number primary key,
@@ -101,7 +101,7 @@ create table voluntary_applicant_ok(
 	constraint fk_member_no_1 references member(member_no),
 	primary key(recruit_no,member_no)
 )
-
+select * from voluntary_applicant
 -- voluntary_applicant 확인해보것음
 create table voluntary_applicant(
 	recruit_no number not null,

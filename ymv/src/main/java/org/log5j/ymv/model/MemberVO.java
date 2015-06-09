@@ -5,6 +5,7 @@ public class MemberVO {
 	private String id;
 	private String password;
 	private String name;
+	private String address;
 	private String identityNo;
 	private String mailAddress;
 	private String memberType;
@@ -12,17 +13,7 @@ public class MemberVO {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public MemberVO(int memberNo, String id, String password, String name,
-			String identityNo, String mailAddress, String memberType) {
-		super();
-		this.memberNo = memberNo;
-		this.id = id;
-		this.password = password;
-		this.name = name;
-		this.identityNo = identityNo;
-		this.mailAddress = mailAddress;
-		this.memberType = memberType;
-	}
+	
 	public int getMemberNo() {
 		return memberNo;
 	}
@@ -65,12 +56,36 @@ public class MemberVO {
 	public void setMemberType(String memberType) {
 		this.memberType = memberType;
 	}
+
+	public MemberVO(int memberNo, String id, String password, String name,
+			String address, String identityNo, String mailAddress,
+			String memberType) {
+		super();
+		this.memberNo = memberNo;
+		this.id = id;
+		this.password = password;
+		this.name = name;
+		this.address = address;
+		this.identityNo = identityNo;
+		this.mailAddress = mailAddress;
+		this.memberType = memberType;
+	}
+
 	@Override
 	public String toString() {
 		return "MemberVO [memberNo=" + memberNo + ", id=" + id + ", password="
-				+ password + ", name=" + name + ", identityNo=" + identityNo
-				+ ", mailAddress=" + mailAddress + ", memberType=" + memberType
-				+ "]";
+				+ password + ", name=" + name + ", address=" + address
+				+ ", identityNo=" + identityNo + ", mailAddress=" + mailAddress
+				+ ", memberType=" + memberType + "]";
 	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
 	
 }
