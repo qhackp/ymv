@@ -31,7 +31,7 @@ create table statistics(
 	primary key(age,field)
 )
 select * from STATISTICS
-drop table statistics
+drop table recruit
 
 --recruit
 create table recruit(
@@ -41,7 +41,8 @@ create table recruit(
 	location varchar2(100) not null,
 	age varchar2(100) not null,
 	start_date date not null,
-	end_date date not null
+	end_date date not null,
+	content clob not null
 	)
 	
 drop table recruit
