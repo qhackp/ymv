@@ -42,15 +42,41 @@ create table recruit(
 	location varchar2(100) not null,
 	age varchar2(100) not null,
 	start_date date not null,
-	end_date date not null
+	end_date date not null,
+	content clob not null
 	)
-
+	
 create table field(
 	field varchar2(100) not null
 )
+
+delete from field
+select * from field
+insert into field values('노인');
+insert into field values('아동');
+insert into field values('장애');
+insert into field values('동물');
+insert into field values('환경');
+
+
+
 create table location(
 	location varchar2(100) not null
 )
+
+
+delete from location
+select * from location
+insert into location values('강원도');
+insert into location values('경기도');
+insert into location values('충청도');
+insert into location values('경상도');
+insert into location values('전라도');
+insert into location values('제주도');
+insert into location values('서울');
+insert into location values('부산');
+
+
 
 drop table recruit
 
