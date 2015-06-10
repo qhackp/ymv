@@ -128,30 +128,35 @@ create table board(
 )
 
 create sequence ymv_seq;
+ drop sequence ymv_seq;
+select * from MEMBER;
+select * from board;
+insert into member values(1,'java','1234','임영학','판교','890716','qhackp@naver.com','normal');
+insert into member values(2,'java1','1234','백지영','판교','960102','qorwldud@naver.com','normal');
+insert into member values(3,'qwerty','1234','장지윤','수원','931004','quartzjiyun@naver.com','company');
+insert into member values(4,'kosta','1234','박병준','서울','900227','byungjunpark@naver.com','company');
+insert into BOARD(board_no,board_type,title,writer,content,member_no) values(ymv_seq.nextval,'review','테스트','임영학','가나다라','1');
+insert into BOARD(board_no,board_type,title,writer,content,member_no) values(ymv_seq.nextval,'review','테스트','임영학','가나다라','1');
+insert into statistics(age, field, applicate_count) values(20,'환경',1);
+insert into statistics(age, field, applicate_count) values(30,'환경',2);
+insert into RECRUIT(recruit_no, title, field, location, age, start_date, end_date) values(1,'봉사글?','환경','판교',20,to_date('2015-06-09 12:00','YYYY-MM-DD HH24:MI'),to_date('2015-06-09 15:00','YYYY-MM-DD HH24:MI'));
+insert into RECRUIT(recruit_no, title, field, location, age, start_date, end_date) values(2,'봉사글?','환경','판교',20,to_date('2015-06-09 12:00','YYYY-MM-DD HH24:MI'),to_date('2015-06-09 15:00','YYYY-MM-DD HH24:MI'));
+insert into SCHEDULER(member_no, field, location, start_date, end_date) values(1, '환경', '판교', to_date('2015-06-09 12:00','YYYY-MM-DD HH24:MI'),to_date('2015-06-09 15:00','YYYY-MM-DD HH24:MI'));
+insert into SCHEDULER(member_no, field, location, start_date, end_date) values(2, '환경', '판교', to_date('2015-06-09 12:00','YYYY-MM-DD HH24:MI'),to_date('2015-06-09 15:00','YYYY-MM-DD HH24:MI'));
+insert into VOLUNTARY_SERVICE_APPLICATE(recruit_no, member_no) values(1, 1);
+insert into VOLUNTARY_SERVICE_APPLICATE(recruit_no, member_no) values(2, 2);
+insert into QNA_BOARD(qna_no, title, writer, content, ref, restep, relevel, member_no) values(1, 'qna게시판?', '임영학', '내용어쩌구저쩌구1', 1, 0, 1, 1);
+insert into QNA_BOARD(qna_no, title, writer, content, ref, restep, relevel, member_no) values(2, 'qna게시판?', '임영학', '내용어쩌구저쩌구2', 2, 0, 1, 1);
+insert into YMV_COMMENT(comment_no, writer, content, time_posted, board_no) values(ymv_seq.nextval,'임영학','하고있습니다1',sysdate,1);
+insert into YMV_COMMENT(comment_no, writer, content, time_posted, board_no) values(ymv_seq.nextval,'임영학','하고있습니다2',sysdate,2);
+select * from PICTURE;
 
-
-insert into member values(1,'java','1234','임영학','판교','890716','qhackp@naver.com','normal')
-insert into member values(2,'java1','1234','백지영','판교','960102','qorwldud@naver.com','normal')
-insert into BOARD(board_no,board_type,title,writer,content,member_no) values(ymv_seq.nextval,'review','테스트','임영학','가나다라','1')
-insert into BOARD(board_no,board_type,title,writer,content,member_no) values(ymv_seq.nextval,'review','테스트','임영학','가나다라','1')
-insert into statistics(age, field, applicate_count) values(20,'환경',1)
-insert into statistics(age, field, applicate_count) values(30,'환경',2)
-insert into RECRUIT(recruit_no, title, field, location, age, start_date, end_date) values(1,'봉사글?','환경','판교',20,to_date('2015-06-09 12:00','YYYY-MM-DD HH24:MI'),to_date('2015-06-09 15:00','YYYY-MM-DD HH24:MI'))
-insert into RECRUIT(recruit_no, title, field, location, age, start_date, end_date) values(2,'봉사글?','환경','판교',20,to_date('2015-06-09 12:00','YYYY-MM-DD HH24:MI'),to_date('2015-06-09 15:00','YYYY-MM-DD HH24:MI'))
-insert into SCHEDULER(member_no, field, location, start_date, end_date) values(1, '환경', '판교', to_date('2015-06-09 12:00','YYYY-MM-DD HH24:MI'),to_date('2015-06-09 15:00','YYYY-MM-DD HH24:MI'))
-insert into SCHEDULER(member_no, field, location, start_date, end_date) values(2, '환경', '판교', to_date('2015-06-09 12:00','YYYY-MM-DD HH24:MI'),to_date('2015-06-09 15:00','YYYY-MM-DD HH24:MI'))
-insert into VOLUNTARY_SERVICE_APPLICATE(recruit_no, member_no) values(1, 1)
-insert into VOLUNTARY_SERVICE_APPLICATE(recruit_no, member_no) values(2, 2)
-insert into QNA_BOARD(qna_no, title, writer, content, ref, restep, relevel, member_no) values(1, 'qna게시판?', '임영학', '내용어쩌구저쩌구', 1, 0, 1, 1)
-insert into QNA_BOARD(qna_no, title, writer, content, ref, restep, relevel, member_no) values(2, 'qna게시판?', '임영학', '내용어쩌구저쩌구', 2, 0, 1, 1)
-insert into YMV_COMMENT(comment_no, writer, content, time_posted, board_no) values()
-
-insert into PICTURE(picture_no, picture_name, board_no) values()
-
-insert into VOLUNTARY_APPLICANT_OK(recruit_no, member_no) values()
-
-insert into VOLUNTARY_APPLICANT(recruit_no, member_no) values()
-
+insert into PICTURE(picture_no, picture_name, board_no) values(ymv_seq.nextval,'봉사사진1',1);
+insert into PICTURE(picture_no, picture_name, board_no) values(ymv_seq.nextval,'봉사사진2',2);
+insert into VOLUNTARY_APPLICANT_OK(recruit_no, member_no) values(1,1);
+insert into VOLUNTARY_APPLICANT_OK(recruit_no, member_no) values(1,2);
+insert into VOLUNTARY_APPLICANT(recruit_no, member_no) values(1,1);
+insert into VOLUNTARY_APPLICANT(recruit_no, member_no) values(1,2);
 
 
 
