@@ -44,7 +44,14 @@ create table recruit(
 	start_date date not null,
 	end_date date not null
 	)
-	
+
+create table field(
+	field varchar2(100) not null
+)
+create table location(
+	location varchar2(100) not null
+)
+
 drop table recruit
 
 drop table scheduler
