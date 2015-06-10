@@ -115,6 +115,8 @@ create table voluntary_applicant(
 	constraint fk_member_no_2 references member(member_no),
 	primary key(recruit_no,member_no)
 )
+
+select * from board
 create table board(
 	board_no number primary key,
 	board_type varchar2(50) not null,
