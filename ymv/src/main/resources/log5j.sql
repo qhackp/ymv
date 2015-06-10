@@ -47,6 +47,13 @@ create table recruit(
 	
 drop table recruit
 
+create table location(
+	location varchar2(100) not null
+)	
+create table field(
+	field varchar2(50) not null
+)
+
 drop table scheduler
 
 create table scheduler(
@@ -129,28 +136,28 @@ create sequence ymv_seq;
  drop sequence ymv_seq;
 select * from MEMBER;
 select * from board;
-insert into member values(1,'java','1234','ÀÓ¿µÇÐ','ÆÇ±³','890716','qhackp@naver.com','normal');
-insert into member values(2,'java1','1234','¹éÁö¿µ','ÆÇ±³','960102','qorwldud@naver.com','normal');
-insert into member values(3,'qwerty','1234','ÀåÁöÀ±','¼ö¿ø','931004','quartzjiyun@naver.com','company');
-insert into member values(4,'kosta','1234','¹Úº´ÁØ','¼­¿ï','900227','byungjunpark@naver.com','company');
-insert into BOARD(board_no,board_type,title,writer,content,member_no) values(ymv_seq.nextval,'review','Å×½ºÆ®','ÀÓ¿µÇÐ','°¡³ª´Ù¶ó','1');
-insert into BOARD(board_no,board_type,title,writer,content,member_no) values(ymv_seq.nextval,'review','Å×½ºÆ®','ÀÓ¿µÇÐ','°¡³ª´Ù¶ó','1');
-insert into statistics(age, field, applicate_count) values(20,'È¯°æ',1);
-insert into statistics(age, field, applicate_count) values(30,'È¯°æ',2);
-insert into RECRUIT(recruit_no, title, field, location, age, start_date, end_date) values(1,'ºÀ»ç±Û?','È¯°æ','ÆÇ±³',20,to_date('2015-06-09 12:00','YYYY-MM-DD HH24:MI'),to_date('2015-06-09 15:00','YYYY-MM-DD HH24:MI'));
-insert into RECRUIT(recruit_no, title, field, location, age, start_date, end_date) values(2,'ºÀ»ç±Û?','È¯°æ','ÆÇ±³',20,to_date('2015-06-09 12:00','YYYY-MM-DD HH24:MI'),to_date('2015-06-09 15:00','YYYY-MM-DD HH24:MI'));
-insert into SCHEDULER(member_no, field, location, start_date, end_date) values(1, 'È¯°æ', 'ÆÇ±³', to_date('2015-06-09 12:00','YYYY-MM-DD HH24:MI'),to_date('2015-06-09 15:00','YYYY-MM-DD HH24:MI'));
-insert into SCHEDULER(member_no, field, location, start_date, end_date) values(2, 'È¯°æ', 'ÆÇ±³', to_date('2015-06-09 12:00','YYYY-MM-DD HH24:MI'),to_date('2015-06-09 15:00','YYYY-MM-DD HH24:MI'));
+insert into member values(1,'java','1234','ï¿½Ó¿ï¿½ï¿½ï¿½','ï¿½Ç±ï¿½','890716','qhackp@naver.com','normal');
+insert into member values(2,'java1','1234','ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','ï¿½Ç±ï¿½','960102','qorwldud@naver.com','normal');
+insert into member values(3,'qwerty','1234','ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','ï¿½ï¿½ï¿½ï¿½','931004','quartzjiyun@naver.com','company');
+insert into member values(4,'kosta','1234','ï¿½Úºï¿½ï¿½ï¿½','ï¿½ï¿½ï¿½ï¿½','900227','byungjunpark@naver.com','company');
+insert into BOARD(board_no,board_type,title,writer,content,member_no) values(ymv_seq.nextval,'review','ï¿½×½ï¿½Æ®','ï¿½Ó¿ï¿½ï¿½ï¿½','ï¿½ï¿½ï¿½ï¿½ï¿½Ù¶ï¿½','1');
+insert into BOARD(board_no,board_type,title,writer,content,member_no) values(ymv_seq.nextval,'review','ï¿½×½ï¿½Æ®','ï¿½Ó¿ï¿½ï¿½ï¿½','ï¿½ï¿½ï¿½ï¿½ï¿½Ù¶ï¿½','1');
+insert into statistics(age, field, applicate_count) values(20,'È¯ï¿½ï¿½',1);
+insert into statistics(age, field, applicate_count) values(30,'È¯ï¿½ï¿½',2);
+insert into RECRUIT(recruit_no, title, field, location, age, start_date, end_date) values(1,'ï¿½ï¿½ï¿½ï¿½ï¿½?','È¯ï¿½ï¿½','ï¿½Ç±ï¿½',20,to_date('2015-06-09 12:00','YYYY-MM-DD HH24:MI'),to_date('2015-06-09 15:00','YYYY-MM-DD HH24:MI'));
+insert into RECRUIT(recruit_no, title, field, location, age, start_date, end_date) values(2,'ï¿½ï¿½ï¿½ï¿½ï¿½?','È¯ï¿½ï¿½','ï¿½Ç±ï¿½',20,to_date('2015-06-09 12:00','YYYY-MM-DD HH24:MI'),to_date('2015-06-09 15:00','YYYY-MM-DD HH24:MI'));
+insert into SCHEDULER(member_no, field, location, start_date, end_date) values(1, 'È¯ï¿½ï¿½', 'ï¿½Ç±ï¿½', to_date('2015-06-09 12:00','YYYY-MM-DD HH24:MI'),to_date('2015-06-09 15:00','YYYY-MM-DD HH24:MI'));
+insert into SCHEDULER(member_no, field, location, start_date, end_date) values(2, 'È¯ï¿½ï¿½', 'ï¿½Ç±ï¿½', to_date('2015-06-09 12:00','YYYY-MM-DD HH24:MI'),to_date('2015-06-09 15:00','YYYY-MM-DD HH24:MI'));
 insert into VOLUNTARY_SERVICE_APPLICATE(recruit_no, member_no) values(1, 1);
 insert into VOLUNTARY_SERVICE_APPLICATE(recruit_no, member_no) values(2, 2);
-insert into QNA_BOARD(qna_no, title, writer, content, ref, restep, relevel, member_no) values(1, 'qna°Ô½ÃÆÇ?', 'ÀÓ¿µÇÐ', '³»¿ë¾îÂ¼±¸ÀúÂ¼±¸1', 1, 0, 1, 1);
-insert into QNA_BOARD(qna_no, title, writer, content, ref, restep, relevel, member_no) values(2, 'qna°Ô½ÃÆÇ?', 'ÀÓ¿µÇÐ', '³»¿ë¾îÂ¼±¸ÀúÂ¼±¸2', 2, 0, 1, 1);
-insert into YMV_COMMENT(comment_no, writer, content, time_posted, board_no) values(ymv_seq.nextval,'ÀÓ¿µÇÐ','ÇÏ°íÀÖ½À´Ï´Ù1',sysdate,1);
-insert into YMV_COMMENT(comment_no, writer, content, time_posted, board_no) values(ymv_seq.nextval,'ÀÓ¿µÇÐ','ÇÏ°íÀÖ½À´Ï´Ù2',sysdate,2);
+insert into QNA_BOARD(qna_no, title, writer, content, ref, restep, relevel, member_no) values(1, 'qnaï¿½Ô½ï¿½ï¿½ï¿½?', 'ï¿½Ó¿ï¿½ï¿½ï¿½', 'ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½1', 1, 0, 1, 1);
+insert into QNA_BOARD(qna_no, title, writer, content, ref, restep, relevel, member_no) values(2, 'qnaï¿½Ô½ï¿½ï¿½ï¿½?', 'ï¿½Ó¿ï¿½ï¿½ï¿½', 'ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½2', 2, 0, 1, 1);
+insert into YMV_COMMENT(comment_no, writer, content, time_posted, board_no) values(ymv_seq.nextval,'ï¿½Ó¿ï¿½ï¿½ï¿½','ï¿½Ï°ï¿½ï¿½Ö½ï¿½ï¿½Ï´ï¿½1',sysdate,1);
+insert into YMV_COMMENT(comment_no, writer, content, time_posted, board_no) values(ymv_seq.nextval,'ï¿½Ó¿ï¿½ï¿½ï¿½','ï¿½Ï°ï¿½ï¿½Ö½ï¿½ï¿½Ï´ï¿½2',sysdate,2);
 select * from PICTURE;
 
-insert into PICTURE(picture_no, picture_name, board_no) values(ymv_seq.nextval,'ºÀ»ç»çÁø1',1);
-insert into PICTURE(picture_no, picture_name, board_no) values(ymv_seq.nextval,'ºÀ»ç»çÁø2',2);
+insert into PICTURE(picture_no, picture_name, board_no) values(ymv_seq.nextval,'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½1',1);
+insert into PICTURE(picture_no, picture_name, board_no) values(ymv_seq.nextval,'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½2',2);
 insert into VOLUNTARY_APPLICANT_OK(recruit_no, member_no) values(1,1);
 insert into VOLUNTARY_APPLICANT_OK(recruit_no, member_no) values(1,2);
 insert into VOLUNTARY_APPLICANT(recruit_no, member_no) values(1,1);
